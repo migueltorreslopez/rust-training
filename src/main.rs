@@ -29,6 +29,8 @@ fn main(){
 
 	println!("Closure result: {}", closure_result);
 
+	call_complex_closure();
+
 }
 
 enum MyEnum {
@@ -67,4 +69,30 @@ fn ignore_binding(res: Result<i32, i32>) {
 		Ok(value) => println!("got value: {}", value),
 		Err(_) => println!("got error")
 	}
+}
+
+fn call_complex_closure(){
+	let mut result;
+	// Define closure
+	let my_closure = |a, b| {
+		let mut closure_result = "f";
+		match a {
+			"m" => closure_result = a,
+			_ => closure_result = "unknown",
+		};
+		closure_result
+	};
+
+	result = my_closure("m", "b");
+
+	println!("call_complex_closure result: {}", result);
+
+	assert_eq!("m", result);
+
+	result = my_closure("p", "b");
+
+	println!("call_complex_closure result: {}", result);
+
+	assert_eq!("unknown", result)
+
 }
