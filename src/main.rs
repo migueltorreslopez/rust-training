@@ -29,7 +29,12 @@ fn main(){
 
 	println!("Closure result: {}", closure_result);
 
+	// Call complex closure
 	call_complex_closure();
+
+	// Call closure as parameter
+	let cap_result = my_closure_as_param(|x| x + 1);
+	println!("Closure as parameter: {}", cap_result);
 
 }
 
@@ -94,5 +99,14 @@ fn call_complex_closure(){
 	println!("call_complex_closure result: {}", result);
 
 	assert_eq!("unknown", result)
+
+}
+
+fn my_closure_as_param<F>(f: F) -> i32
+	where F: Fn(i32) ->i32{
+
+	// Call the closure
+	let result = f(4);
+	result
 
 }
