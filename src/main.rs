@@ -17,10 +17,18 @@ fn main(){
 	ignore_binding(res);
 
 	// Call Impl
-	let myImpl = MyImpl {myInt: 3};
-	let implResult = myImpl.increment(2);
+	let my_impl = MyImpl {my_int: 3};
+	let impl_result = my_impl.increment(2);
 
-	println!("Impl result: {}", implResult);
+	println!("Impl result: {}", impl_result);
+
+	// Closure
+	let my_closure = |x| x + 1;
+	// call closure function
+	let closure_result = my_closure(3);
+
+	println!("Closure result: {}", closure_result);
+
 }
 
 enum MyEnum {
@@ -29,12 +37,12 @@ enum MyEnum {
 }
 
 struct MyImpl {
-	myInt: i32,
+	my_int: i32,
 }
 
 impl MyImpl {
 	fn increment(&self, inc : i32) -> i32{
-		self.myInt + inc
+		self.my_int + inc
 	}
 }
 
