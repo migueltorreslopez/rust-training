@@ -36,6 +36,9 @@ fn main(){
 	let cap_result = my_closure_as_param(|x| x + 1);
 	println!("Closure as parameter: {}", cap_result);
 
+	// Call simple iterator
+	iterate_simple_test();
+
 }
 
 enum MyEnum {
@@ -108,5 +111,16 @@ fn my_closure_as_param<F>(f: F) -> i32
 	// Call the closure
 	let result = f(4);
 	result
+
+}
+
+fn iterate_simple_test(){
+	//Create vector
+	let v = vec![1,2,3];
+
+	// Iterate
+	let new_v: Vec<i32> = v.iter().map(|x| x + 1).collect();
+
+	assert_eq!(new_v, [2,3,4]);
 
 }
