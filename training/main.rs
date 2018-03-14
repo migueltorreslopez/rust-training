@@ -1,6 +1,13 @@
+extern crate concurrency;
 
+use concurrency::threads;
 
 fn main(){
+// Call concurrency lib
+	threads::two();
+}
+
+/*fn main2(){
 	println!("Hello, world!");
 
 	let my_enum = MyEnum::Else;
@@ -123,4 +130,4 @@ fn iterate_simple_test(){
 
 	assert_eq!(new_v, [2,3,4]);
 
-}
+}*/

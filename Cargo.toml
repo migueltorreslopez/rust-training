@@ -1,4 +1,11 @@
 [package]
-name = "training"
+name = "rust-training"
 version = "0.1.0"
-authors = ["Miguel Torres <mtorres@tibco.com>"]
+authors = ["Miguel Torres <migueltorreslopez@gmail.com>"]
+
+[dependencies]
+concurrency = { path = "concurrency" }
+
+[[bin]]
+path = "training/main.rs"
+name = "training"
