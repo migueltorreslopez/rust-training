@@ -1,0 +1,8 @@
+[package]
+name = "dec_macro_consumer"
+version = "0.1.0"
+authors = ["Miguel Torres <migueltorreslopez@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+dec_macro_example = { path = "../dec_macro_example"}

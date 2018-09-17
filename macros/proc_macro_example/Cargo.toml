@@ -1,0 +1,13 @@
+[package]
+name = "proc_macro_example"
+version = "0.1.0"
+authors = ["Miguel Torres <migueltorreslopez@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+syn = "0.14.4"
+quote = "0.6.3"
+proc_macro_example_level2 = {path= "../proc_macro_example_level2"}
+
+[lib]
+proc-macro = true
